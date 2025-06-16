@@ -1,4 +1,4 @@
-TARGET = forth
+TARGET = afd
 RUSTC = rustc
 RUSTFLAGS = --edition 2021 -C opt-level=2 -C panic=abort -C link-arg=-nostartfiles -C link-arg=-static
 
@@ -6,8 +6,8 @@ RUSTFLAGS = --edition 2021 -C opt-level=2 -C panic=abort -C link-arg=-nostartfil
 
 all: $(TARGET)
 
-$(TARGET): main.rs
-	$(RUSTC) $(RUSTFLAGS) -o $(TARGET) main.rs
+$(TARGET): afd.rs
+	$(RUSTC) $(RUSTFLAGS) -o $(TARGET) afd.rs
 
 clean:
 	rm -f $(TARGET)
